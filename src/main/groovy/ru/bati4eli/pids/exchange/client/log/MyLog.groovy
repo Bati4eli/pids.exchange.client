@@ -1,36 +1,40 @@
-package log
+package ru.bati4eli.pids.exchange.client.log
 
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-public class mylog {
+//@Singleton
+class MyLog {
 
-    static void warn(Object msg) {
+    public static final log = new MyLog()
+
+    private MyLog() {}
+
+    void warn(Object msg) {
         def state = "[WARN]"
         print "${printDate()}\t$state\t${printObj(msg)}"
     }
 
-    static void error(Object msg) {
+    void error(Object msg) {
         def state = "[ERROR]"
         print "${printDate()}\t$state\t${printObj(msg)}"
     }
 
-    static void debug(Object msg) {
+    void debug(Object msg) {
         def state = "[DEBUG]"
         print "${printDate()}\t$state\t${printObj(msg)}"
     }
 
-    static void info(Object msg) {
+    void info(Object msg) {
         def state = "[INFO]"
         print "${printDate()}\t$state\t${printObj(msg)}"
     }
 
     private static String printDate() {
-        "${LocalDateTime.now()}"
+        "${LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)}"
     }
 
     private static String printObj(Object obj) {
         "${obj?.toString()}\n"
     }
-
-
 }

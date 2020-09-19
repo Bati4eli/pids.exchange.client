@@ -1,4 +1,4 @@
-package simpleExample;
+package ru.bati4eli.pids.exchange.client.javaFXsimpleExample;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

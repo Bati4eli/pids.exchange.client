@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -8,13 +9,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.FlowPane?>
 
-<AnchorPane fx:id="root" prefHeight="577.0" prefWidth="900.0" style="-fx-background-color: #143656;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.MainController">
+<AnchorPane id="mainPane" fx:id="root" prefHeight="623.0" prefWidth="976.0" style="-fx-background-color: #143656;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bati4eli.pids.exchange.client.app.MainController">
    <children>
-      <VBox alignment="CENTER" layoutY="92.0" prefHeight="531.0" prefWidth="228.0" AnchorPane.topAnchor="92.0">
+      <VBox id="leftMenu" alignment="CENTER" layoutY="92.0" prefHeight="531.0" prefWidth="228.0" style="-fx-background-color: #1c3d5c;" AnchorPane.topAnchor="92.0">
          <children>
-            <Button fx:id="butDrones" mnemonicParsing="false" onAction="#clickDrones" prefHeight="45.0" prefWidth="228.0" text="Drones" />
-             <Button fx:id="butSettings" onAction="#clickSettings" prefHeight="45.0" prefWidth="228.0" text="Settings" />
-            <Button fx:id="butAbout" onAction="#clickAbout" prefHeight="45.0" prefWidth="228.0" text="About" />
+            <Button fx:id="butDrones" mnemonicParsing="false" onAction="#clickDrones" prefHeight="87.0" prefWidth="228.0" rotate="-0.0" text="Drones">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Button>
+             <Button fx:id="butSettings" onAction="#clickSettings" prefHeight="86.0" prefWidth="228.0" text="Settings">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Button>
+            <Button fx:id="butAbout" onAction="#clickAbout" prefHeight="91.0" prefWidth="228.0" text="About">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Button>
          </children>
       </VBox>
       <Pane prefHeight="92.0" prefWidth="228.0" style="-fx-background-color: #ecf026;">
@@ -24,6 +34,16 @@
                   <Font name="Rockwell" size="18.0" />
                </font>
             </Label>
+         </children>
+      </Pane>
+      <Pane id="comPane" layoutX="228.0" layoutY="25.0" prefHeight="573.0" prefWidth="731.0" style="-fx-background-color: #4cc2be;">
+         <children>
+            <ProgressIndicator layoutX="7.0" prefHeight="40.0" prefWidth="36.0" progress="0.0" />
+            <ChoiceBox id="choiceBox" fx:id="choiceBox" layoutX="91.0" layoutY="40.0" onDragDetected="#actionChoiceBox" prefWidth="150.0" />
+            <Label layoutX="14.0" layoutY="44.0" text="Com port:" />
+            <Label layoutX="15.0" layoutY="82.0" text="Enter msg:" />
+            <TextField layoutX="92.0" layoutY="78.0" prefHeight="25.0" prefWidth="622.0" />
+            <TextArea layoutX="18.0" layoutY="123.0" prefHeight="407.0" prefWidth="697.0" />
          </children>
       </Pane>
    </children>
