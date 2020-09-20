@@ -1,5 +1,7 @@
 package ru.bati4eli.pids.exchange.client.services
 
+//import javax.comm.CommPort
+//import javax.comm.SerialPort.*
 import jssc.*
 import ru.bati4eli.pids.exchange.client.app.FxApplication
 import ru.bati4eli.pids.exchange.client.app.FxGuiController
@@ -8,13 +10,11 @@ import static ru.bati4eli.pids.exchange.client.log.MyLog.log
 
 class SerialPortService {
 
-//    private FxApplication appMain
     private FxGuiController controller
     private SerialPort serialPort
     private String currentPortName
 
     SerialPortService(FxApplication application) {
-//        this.appMain = application
         this.controller = application.controller
         controller.serialPortService = this
         researchPorts()
@@ -36,7 +36,9 @@ class SerialPortService {
         currentPortName = port
         try {
             log.debug(".. Connection to $port")
-            serialPort.openPort()//Открываем порт
+            controller.appendToHistory(".. Connection to $port")
+
+            serialPort.openPort()//Открываем порт //todo тобi писта здесь!
 
             serialPort.setParams(SerialPort.BAUDRATE_9600, //Выставляем параметры
                     SerialPort.DATABITS_8,
@@ -47,8 +49,9 @@ class SerialPortService {
                     SerialPort.FLOWCONTROL_RTSCTS_OUT)
 
             serialPort.addEventListener(new PortReader(), SerialPort.MASK_RXCHAR) //Устанавливаем ивент лисенер и маску
-            //Отправляем запрос устройству
-//            sendData('Get data')
+
+
+
         } catch (Throwable ex) {
             log.error(ex)
         }
@@ -63,7 +66,6 @@ class SerialPortService {
                     String data = serialPort.readString(event.getEventValue())
                     controller.appendToHistory(currentPortName, data)
                     // снова отправляем запрос
-//                    sendData('Get data')
                 } catch (SerialPortException ex) {
                     log.error(ex)
                 }

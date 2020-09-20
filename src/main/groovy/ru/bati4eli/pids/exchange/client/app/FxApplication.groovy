@@ -57,6 +57,7 @@ class FxApplication extends Application {
             it.textAreaHistory.editable = false
             it.choiceBox.onAction = { ActionEvent event ->
                 log.debug("choiceBox set value: $choiceBox.value")
+                serialPortService?.connect(choiceBox.value)
             }
         }
     }

@@ -71,6 +71,10 @@ class FxGuiController {
         return text
     }
 
+    void appendToHistory( String msg) {
+        textAreaHistory.appendText(msg)
+    }
+
     void appendToHistory(String from, String msg) {
         textAreaHistory.appendText("$from:\t$msg\n".toString())
     }
