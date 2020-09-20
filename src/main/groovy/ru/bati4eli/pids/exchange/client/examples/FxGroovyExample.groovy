@@ -1,4 +1,4 @@
-package ru.bati4eli.pids.exchange.client.javaFXsimpleExample
+package ru.bati4eli.pids.exchange.client.examples
 
 import javafx.application.Application
 import javafx.scene.Scene
@@ -6,7 +6,7 @@ import javafx.scene.control.Label
 import javafx.scene.layout.StackPane
 import javafx.stage.Stage
 
-class GroovyExample extends Application {
+class FxGroovyExample extends Application {
 
     @Override
     void start(Stage stage) {
@@ -22,6 +22,6 @@ class GroovyExample extends Application {
     }
 
     static void main(String[] args) {
-        launch(GroovyExample.class,args)
+        launch(FxGroovyExample.class,args)
     }
 }

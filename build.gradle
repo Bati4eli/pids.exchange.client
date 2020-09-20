@@ -8,14 +8,14 @@ plugins {
 group 'ru.bati4eli.pids.exchange.client'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 11
-mainClassName = "ru.bati4eli.pids.exchange.client.app.AppMain"
+mainClassName = "ru.bati4eli.pids.exchange.client.app.FxApplication"
 
 manifest {
-    attributes('Main-Class': 'ru.bati4eli.pids.exchange.client.app.AppMain', 'Implementation-Version': version)
+    attributes('Main-Class': 'ru.bati4eli.pids.exchange.client.app.FxApplication', 'Implementation-Version': version)
 }
 
-//mainClassName = "ru.bati4eli.pids.exchange.client.simpleExample.GroovyExample"
-//mainClassName = "ru.bati4eli.pids.exchange.client.simpleExample.JavaExample"
+//mainClassName = "ru.bati4eli.pids.exchange.client.examples.FxGroovyExample"
+//mainClassName = "ru.bati4eli.pids.exchange.client.examples.FxJavaExample"
 
 repositories {
     mavenCentral()

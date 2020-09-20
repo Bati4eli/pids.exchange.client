@@ -9,7 +9,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.FlowPane?>
 
-<AnchorPane id="mainPane" fx:id="root" prefHeight="623.0" prefWidth="976.0" style="-fx-background-color: #143656;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bati4eli.pids.exchange.client.app.MainController">
+<AnchorPane id="mainPane" fx:id="root" prefHeight="613.0" prefWidth="980.0" style="-fx-background-color: #143656;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bati4eli.pids.exchange.client.app.FxGuiController">
    <children>
       <VBox id="leftMenu" alignment="CENTER" layoutY="92.0" prefHeight="531.0" prefWidth="228.0" style="-fx-background-color: #1c3d5c;" AnchorPane.topAnchor="92.0">
          <children>
@@ -36,14 +36,24 @@
             </Label>
          </children>
       </Pane>
-      <Pane id="comPane" layoutX="228.0" layoutY="25.0" prefHeight="573.0" prefWidth="731.0" style="-fx-background-color: #4cc2be;">
+      <Pane id="comPane" fx:id="panelDebugPort" layoutX="235.0" layoutY="14.0" prefHeight="596.0" prefWidth="731.0" style="-fx-background-color: #4cc2be;">
          <children>
-            <ProgressIndicator layoutX="7.0" prefHeight="40.0" prefWidth="36.0" progress="0.0" />
-            <ChoiceBox id="choiceBox" fx:id="choiceBox" layoutX="91.0" layoutY="40.0" onDragDetected="#actionChoiceBox" prefWidth="150.0" />
-            <Label layoutX="14.0" layoutY="44.0" text="Com port:" />
-            <Label layoutX="15.0" layoutY="82.0" text="Enter msg:" />
-            <TextField layoutX="92.0" layoutY="78.0" prefHeight="25.0" prefWidth="622.0" />
-            <TextArea layoutX="18.0" layoutY="123.0" prefHeight="407.0" prefWidth="697.0" />
+            <ProgressIndicator layoutX="18.0" layoutY="21.0" prefHeight="40.0" prefWidth="36.0" progress="0.0" />
+            <ChoiceBox id="choiceBox" fx:id="choiceBox" layoutX="565.0" layoutY="28.0" onDragDetected="#actionChoiceBox" prefWidth="150.0" />
+            <Label layoutX="420.0" layoutY="26.0" prefHeight="31.0" prefWidth="158.0" text="Choose port:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <TextField fx:id="textFieldTx" layoutX="18.0" layoutY="540.0" prefHeight="25.0" prefWidth="581.0" promptText="Enter command" />
+            <TextArea fx:id="textAreaHistory" layoutX="18.0" layoutY="83.0" prefHeight="447.0" prefWidth="697.0" promptText="Text here">
+               <font>
+                  <Font name="Courier New" size="12.0" />
+               </font></TextArea>
+            <Button fx:id="butSend" layoutX="599.0" layoutY="540.0" mnemonicParsing="false" onAction="#clickSend" prefHeight="25.0" prefWidth="117.0" text="SEND">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>

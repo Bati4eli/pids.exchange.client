@@ -1,11 +1,14 @@
-package ru.bati4eli.pids.exchange.client.comPort
+package ru.bati4eli.pids.exchange.client.examples
 
 import jssc.SerialPort
 import jssc.SerialPortEvent
 import jssc.SerialPortEventListener
 import jssc.SerialPortException
 
-class ExampleSerialPortConversation {
+/**
+ * Example from: https://habr.com/ru/post/133766/
+ */
+class SerialPortFromHabr {
 
     private static SerialPort serialPort
 

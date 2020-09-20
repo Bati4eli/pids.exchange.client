@@ -1,4 +1,4 @@
-package ru.bati4eli.pids.exchange.client.javaFXsimpleExample;
+package ru.bati4eli.pids.exchange.client.examples;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class JavaExample extends Application {
+public class FxJavaExample extends Application {
 
     @Override
     public void start(Stage stage) {
