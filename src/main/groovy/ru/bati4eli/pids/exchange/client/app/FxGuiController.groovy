@@ -54,7 +54,9 @@ class FxGuiController {
 
     @FXML
     void actionChoiceBox(ActionEvent event) {
-        log.debug("[actionChoiceBox]: $choiceBox.value")
+        log.debug("choiceBox set value: $choiceBox.value")
+        clearHistory()
+        serialPortService?.connect(choiceBox.value)
     }
 
     String getPort() {
@@ -73,6 +75,7 @@ class FxGuiController {
 
     void appendToHistory( String msg) {
         textAreaHistory.appendText(msg)
+        textAreaHistory.appendText('\n')
     }
 
     void appendToHistory(String from, String msg) {
